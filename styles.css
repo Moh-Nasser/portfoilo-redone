@@ -61,6 +61,7 @@ a {
   text-transform: uppercase;
   text-decoration: none;
   color: var(--white);
+  -webkit-tap-highlight-color: transparent;
 }
 .mt--small {
   margin-top: 1.6rem;
