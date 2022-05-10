@@ -51,6 +51,7 @@ html {
   font-family: "Varela Round", sans-serif;
   scroll-behavior: smooth;
   font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 * {
@@ -63,7 +64,7 @@ a {
   text-transform: uppercase;
   text-decoration: none;
   color: var(--white);
-  -webkit-tap-highlight-color: transparent;
+  
 }
 .mt--small {
   margin-top: 1.6rem;
