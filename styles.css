@@ -39,7 +39,7 @@ body {
   color: var(--white);
   text-align: center;
 }
-main{
+main {
   overflow-x: hidden;
 }
 
@@ -64,7 +64,6 @@ a {
   text-transform: uppercase;
   text-decoration: none;
   color: var(--white);
-  
 }
 .mt--small {
   margin-top: 1.6rem;
@@ -247,6 +246,7 @@ a {
   display: flex;
   gap: 0.8rem;
   align-items: center;
+  background-color: #2e344000;
 }
 .btn:hover,
 .btn:hover,
@@ -402,6 +402,8 @@ a {
   flex-direction: column;
   gap: 1.6rem;
   position: relative;
+  transition: all 0.5s ease-out;
+  overflow-x: hidden;
 }
 .contact-heading {
   font-size: 3.6rem;
@@ -457,9 +459,30 @@ a {
   color: white;
   animation-delay: 0.2s;
 }
+.email-part {
+  height: max-content;
+  transition: all 0.5s ease-out;
+  opacity: 1;
+  position: relative;
+}
+.hide {
+  transform: translate(100%);
+  opacity: 0;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .email-contact {
   font-size: 1.6rem;
 }
+
 .email-btn:visited,
 .email-btn:link {
   text-transform: lowercase;
@@ -501,6 +524,45 @@ a {
   margin: 0 auto;
   cursor: pointer;
   margin-top: 0.8rem;
+}
+.svg-box {
+  display: inline-block;
+  position: absolute;
+  width: 150px;
+  display: none;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.success {
+  display: block;
+  animation: fadein 0.3s linear;
+}
+
+.green-stroke {
+  stroke: #7cb342;
+}
+
+.circular circle.path {
+  stroke-dasharray: 330;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  opacity: 0.4;
+  animation: 0.7s draw-circle ease-out;
+}
+.checkmark {
+  stroke-width: 6.25;
+  stroke-linecap: round;
+  position: absolute;
+  top: 56px;
+  left: 49px;
+  width: 52px;
+  height: 40px;
+}
+
+.checkmark path {
+  animation: 1s draw-check ease-out;
 }
 @keyframes falling {
   0% {
@@ -556,7 +618,24 @@ a {
     height: 300px;
   }
 }
+@keyframes draw-check {
+  0% {
+    stroke-dasharray: 49, 80;
+    stroke-dashoffset: 48;
+    opacity: 0;
+  }
 
+  50% {
+    stroke-dasharray: 49, 80;
+    stroke-dashoffset: 48;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dasharray: 130, 80;
+    stroke-dashoffset: 48;
+  }
+}
 @keyframes shadow-rotate {
   from {
     transform: translate(-50%, -50%) rotate(0deg);

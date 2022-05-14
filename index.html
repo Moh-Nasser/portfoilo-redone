@@ -309,47 +309,75 @@
               </svg></div
           ></a>
         </div>
-        <p class="email-contact">
-          or send an
-          <a href="mailto:mohamadnasser01@hotmail.com" class="email-btn"
-            >email</a
-          >
-        </p>
-        <form class="email-form" id="form" onsubmit="sendMail()">
-          <div></div>
-          <div>
-            <label class="input-label" for="from_name">Name</label>
-            <input
-              name="from_name"
-              type="text"
-              class="input"
-              placeholder="Jhon Smith"
-              required
-            />
-          </div>
-          <div>
-            <label class="input-label" for="email">Email</label>
-            <input
-              name="from_email"
-              type="email"
-              class="input"
-              placeholder="example@mail.com"
-              required
-            />
-          </div>
-          <div>
-            <label class="input-label" for="Message">Message</label>
+        <div class="email-part" id="email-part">
+          <p class="email-contact">
+            or send an
+            <a href="mailto:mohamadnasser01@hotmail.com" class="email-btn"
+              >email</a
+            >
+          </p>
+          <form class="email-form" id="form" onsubmit="sendMail()">
+            <div>
+              <label class="input-label" for="from_name">Name</label>
+              <input
+                name="from_name"
+                type="text"
+                class="input"
+                placeholder="Jhon Smith"
+                required
+              />
+            </div>
+            <div>
+              <label class="input-label" for="email">Email</label>
+              <input
+                name="from_email"
+                type="email"
+                class="input"
+                placeholder="example@mail.com"
+                required
+              />
+            </div>
+            <div>
+              <label class="input-label" for="Message">Message</label>
 
-            <textarea
-              name="message"
-              cols="40"
-              rows="5"
-              class="input"
-              required
-            ></textarea>
-          </div>
-          <button class="btn submit-btn">Send</button>
-        </form>
+              <textarea
+                name="message"
+                cols="40"
+                rows="5"
+                class="input"
+                required
+              ></textarea>
+            </div>
+            <button class="btn submit-btn">Send</button>
+          </form>
+        </div>
+        <div class="svg-box" id="svg-box">
+          <svg class="circular green-stroke">
+            <circle
+              class="path"
+              cx="75"
+              cy="75"
+              r="50"
+              fill="none"
+              stroke-width="5"
+              stroke-miterlimit="10"
+            />
+          </svg>
+          <svg class="checkmark green-stroke">
+            <g
+              transform="matrix(0.79961,8.65821e-32,8.39584e-32,0.79961,-489.57,-205.679)"
+            >
+              <path
+                class="checkmark__check"
+                fill="none"
+                d="M616.306,283.025L634.087,300.805L673.361,261.53"
+              />
+            </g>
+          </svg>
+          <button class="btn" style="margin: 0 auto" onclick="sendAnother()">
+            Send another
+          </button>
+        </div>
       </div>
     </section>
   </body>
@@ -364,6 +392,14 @@
       emailjs.sendForm("service_fqgfhrd", "template_arr9l0s", "#form");
       let form = document.getElementById("form");
       form.reset();
+      document.getElementById("email-part").classList.add("hide");
+      setTimeout(() => {
+        document.getElementById("svg-box").classList.add("success");
+      }, 500);
+    }
+    function sendAnother() {
+      document.getElementById("svg-box").classList.remove("success");
+      document.getElementById("email-part").classList.remove("hide");
     }
   </script>
 </html>
