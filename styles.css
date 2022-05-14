@@ -516,6 +516,9 @@ a {
   color: #adb5bd;
   margin-top: 0.2rem;
 }
+textarea {
+  resize: none;
+}
 .submit-btn {
   background-color: rgba(0, 0, 0, 0);
 
